@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Manan's portfolio — hover to explore project cards." />
+  <title>Manan's Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="card-stack" role="list" aria-label="Project cards">
+
+    <!-- Card 4 (bottom of stack) -->
+    <div class="card card-4" role="listitem">
+      <div class="card-icon icon-4" aria-hidden="true">✦</div>
+      <div class="card-label">Analytics</div>
+      <div class="card-title">Revenue Growth</div>
+      <p class="card-desc">Quarterly revenue surged with strong customer retention and expanding market share across all segments.</p>
+      <div class="card-footer">
+        <span class="card-stat">+18.4% MoM</span>
+        <span class="card-badge badge-4">Finance</span>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card card-3" role="listitem">
+      <div class="card-icon icon-3" aria-hidden="true">◈</div>
+      <div class="card-label">Performance</div>
+      <div class="card-title">System Health</div>
+      <p class="card-desc">All core services running at peak performance with zero unplanned downtime this quarter.</p>
+      <div class="card-footer">
+        <span class="card-stat">99.9% uptime</span>
+        <span class="card-badge badge-3">Infra</span>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card card-2" role="listitem">
+      <div class="card-icon icon-2" aria-hidden="true">⬡</div>
+      <div class="card-label">Engagement</div>
+      <div class="card-title">User Activity</div>
+      <p class="card-desc">Daily active users hit an all-time high with session durations increasing by 23% month over month.</p>
+      <div class="card-footer">
+        <span class="card-stat">12.4k sessions</span>
+        <span class="card-badge badge-2">Product</span>
+      </div>
+    </div>
+
+    <!-- Card 1 (top of stack) -->
+    <div class="card card-1" role="listitem">
+      <div class="card-icon icon-1" aria-hidden="true">◉</div>
+      <div class="card-label">Overview</div>
+      <div class="card-title">Dashboard Summary</div>
+      <p class="card-desc">A real-time snapshot of all key metrics, alerts, and team activity across the platform.</p>
+      <div class="card-footer">
+        <span class="card-stat">Updated now</span>
+        <span class="card-badge badge-1">Live</span>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="hint">hover to expand</p>
+
+</body>
+</html>
