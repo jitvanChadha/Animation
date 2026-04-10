@@ -1,1 +1,106 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+  <!-- Hamburger Button -->
+  <button id="menuToggle" style="position: fixed; top: 24px; left: 24px; width: 44px; height: 44px; background: transparent; border: 2px solid rgba(255,255,255,0.3); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; z-index: 1001; transition: all 0.3s ease;">
+    <span id="line1" style="width: 20px; height: 2px; background: rgba(255,255,255,0.8); transition: all 0.3s ease;"></span>
+    <span id="line2" style="width: 20px; height: 2px; background: rgba(255,255,255,0.8); transition: all 0.3s ease;"></span>
+    <span id="line3" style="width: 20px; height: 2px; background: rgba(255,255,255,0.8); transition: all 0.3s ease;"></span>
+  </button>
+
+  <!-- Sidebar Navigation -->
+  <nav id="sidebar" style="position: fixed; left: 24px; top: 80px; width: 280px; background: rgba(20, 10, 50, 0.65); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 32px 24px; transform: scale(0.95) translateY(-10px); opacity: 0; pointer-events: none; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1000; font-family: 'Montserrat', sans-serif;">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <a href="#home" class="sidebar-link">Home</a>
+      <a href="#projects" class="sidebar-link">Projects</a>
+      <a href="#skills" class="sidebar-link">My Skills</a>
+      <a href="#about" class="sidebar-link">My Journey</a>
+      <a href="#contact" class="sidebar-link">Contact Me</a>
+      <hr class="sidebar-divider">
+      <a href="https://github.com/jitvanChadha" target="_blank" rel="noopener noreferrer" class="sidebar-link sidebar-link-icon"><span style="font-size: 16px;"></span> GitHub</a>
+      <a href="https://www.linkedin.com/in/jitvan07" target="_blank" rel="noopener noreferrer" class="sidebar-link sidebar-link-icon"><span style="font-size: 16px;"></span> LinkedIn</a>
+    </div>
+  </nav>
+
+  <!-- Overlay (closes menu on click) -->
+  <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0); pointer-events: none; transition: background 0.3s ease; z-index: 999;"></div>
+
+  <div class="scroll-bg">
+
+    <svg class="scene" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1"  gradientUnits="userSpaceOnUse" x1="-120" y1="20"  x2="-20"  y2="80" ><stop offset="0%" stop-color="white"   stop-opacity="0"/><stop offset="100%" stop-color="white"   stop-opacity="0.95"/></linearGradient>
+        <linearGradient id="g2"  gradientUnits="userSpaceOnUse" x1="-80"  y1="120" x2="40"   y2="192"><stop offset="0%" stop-color="white"   stop-opacity="0"/><stop offset="100%" stop-color="white"   stop-opacity="0.9"/></linearGradient>
+        <linearGradient id="g3"  gradientUnits="userSpaceOnUse" x1="-200" y1="-10" x2="-80"  y2="62" ><stop offset="0%" stop-color="#fff4a0" stop-opacity="0"/><stop offset="100%" stop-color="#fff4a0" stop-opacity="0.95"/></linearGradient>
+        <linearGradient id="g4"  gradientUnits="userSpaceOnUse" x1="-50"  y1="250" x2="80"   y2="326"><stop offset="0%" stop-color="white"   stop-opacity="0"/><stop offset="100%" stop-color="white"   stop-opacity="0.85"/></linearGradient>
+        <linearGradient id="g5"  gradientUnits="userSpaceOnUse" x1="-160" y1="80"  x2="-40"  y2="152"><stop offset="0%" stop-color="#ffe87a" stop-opacity="0"/><stop offset="100%" stop-color="#ffe87a" stop-opacity="0.9"/></linearGradient>
+        <linearGradient id="g6"  gradientUnits="userSpaceOnUse" x1="-30"  y1="360" x2="70"   y2="420"><stop offset="0%" stop-color="white"   stop-opacity="0"/><stop offset="100%" stop-color="white"   stop-opacity="0.9"/></linearGradient>
+        <linearGradient id="g7"  gradientUnits="userSpaceOnUse" x1="-250" y1="160" x2="-90"  y2="256"><stop offset="0%" stop-color="white"   stop-opacity="0"/><stop offset="100%" stop-color="white"   stop-opacity="0.88"/></linearGradient>
+        <linearGradient id="g8"  gradientUnits="userSpaceOnUse" x1="-100" y1="40"  x2="20"   y2="112"><stop offset="0%" stop-color="white"   stop-opacity="0"/><stop offset="100%" stop-color="white"   stop-opacity="0.95"/></linearGradient>
+        <linearGradient id="g9"  gradientUnits="userSpaceOnUse" x1="-180" y1="300" x2="-50"  y2="378"><stop offset="0%" stop-color="#ffe060" stop-opacity="0"/><stop offset="100%" stop-color="#ffe060" stop-opacity="0.9"/></linearGradient>
+        <linearGradient id="g10" gradientUnits="userSpaceOnUse" x1="-60"  y1="180" x2="60"   y2="252"><stop offset="0%" stop-color="white"   stop-opacity="0"/><stop offset="100%" stop-color="white"   stop-opacity="0.9"/></linearGradient>
+        <linearGradient id="g11" gradientUnits="userSpaceOnUse" x1="-140" y1="440" x2="-10"  y2="518"><stop offset="0%" stop-color="white"   stop-opacity="0"/><stop offset="100%" stop-color="white"   stop-opacity="0.85"/></linearGradient>
+        <linearGradient id="g12" gradientUnits="userSpaceOnUse" x1="-300" y1="220" x2="-150" y2="310"><stop offset="0%" stop-color="#fff4a0" stop-opacity="0"/><stop offset="100%" stop-color="#fff4a0" stop-opacity="0.9"/></linearGradient>
+      </defs>
+
+      <!-- stars -->
+      <circle class="star s1"  cx="320" cy="85"  r="1.2" fill="white"/>
+      <circle class="star s2"  cx="580" cy="50"  r="1.0" fill="white"/>
+      <circle class="star s3"  cx="750" cy="130" r="1.3" fill="#ffe87a"/>
+      <circle class="star s4"  cx="480" cy="170" r="1.0" fill="white"/>
+      <circle class="star s5"  cx="880" cy="75"  r="1.1" fill="white"/>
+      <circle class="star s6"  cx="140" cy="60"  r="1.0" fill="#fff4a0"/>
+      <circle class="star s7"  cx="660" cy="200" r="1.2" fill="white"/>
+      <circle class="star s8"  cx="200" cy="210" r="0.9" fill="white"/>
+      <circle class="star s9"  cx="820" cy="160" r="1.1" fill="#ffe87a"/>
+      <circle class="star s10" cx="400" cy="110" r="1.0" fill="white"/>
+      <circle class="star s11" cx="930" cy="230" r="1.3" fill="white"/>
+      <circle class="star s12" cx="70"  cy="140" r="0.9" fill="#fff4a0"/>
+      <circle class="star s13" cx="540" cy="260" r="1.0" fill="white"/>
+      <circle class="star s14" cx="710" cy="45"  r="1.2" fill="white"/>
+      <circle class="star s15" cx="260" cy="310" r="1.0" fill="#ffe87a"/>
+
+      <!--burst star-->
+      <g class="burst b2" style="transform-origin: 760px 370px;">
+        <line x1="760" y1="362" x2="760" y2="378" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="752" y1="370" x2="768" y2="370" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="754" y1="364" x2="766" y2="376" stroke="white" stroke-width="0.7" stroke-linecap="round"/>
+        <line x1="766" y1="364" x2="754" y2="376" stroke="white" stroke-width="0.7" stroke-linecap="round"/>
+        <circle cx="760" cy="370" r="2" fill="white"/>
+      </g>
+
+      <!-- comets -->
+      <g class="comet c1"  style="transform-origin: -120px 20px;"><line x1="-120" y1="20"  x2="-20"  y2="80"  stroke="url(#g1)"  stroke-width="1.3" stroke-linecap="round"/><circle cx="-20"  cy="80"  r="1.5" fill="white"/></g>
+      <g class="comet c2"  style="transform-origin: -80px 120px;"><line x1="-80"  y1="120" x2="40"   y2="192" stroke="url(#g2)"  stroke-width="1.0" stroke-linecap="round"/><circle cx="40"   cy="192" r="1.2" fill="white"/></g>
+      <g class="comet c3"  style="transform-origin: -200px -10px;"><line x1="-200" y1="-10" x2="-80"  y2="62"  stroke="url(#g3)"  stroke-width="1.5" stroke-linecap="round"/><circle cx="-80"  cy="62"  r="1.6" fill="#fff4a0"/></g>
+      <g class="comet c4"  style="transform-origin: -50px 250px;"><line x1="-50"  y1="250" x2="80"   y2="326" stroke="url(#g4)"  stroke-width="0.8" stroke-linecap="round"/><circle cx="80"   cy="326" r="1.0" fill="white"/></g>
+      <g class="comet c5"  style="transform-origin: -160px 80px;"><line x1="-160" y1="80"  x2="-40"  y2="152" stroke="url(#g5)"  stroke-width="1.2" stroke-linecap="round"/><circle cx="-40"  cy="152" r="1.4" fill="#ffe87a"/></g>
+      <g class="comet c6"  style="transform-origin: -30px 360px;"><line x1="-30"  y1="360" x2="70"   y2="420" stroke="url(#g6)"  stroke-width="1.4" stroke-linecap="round"/><circle cx="70"   cy="420" r="1.5" fill="white"/></g>
+      <g class="comet c7"  style="transform-origin: -250px 160px;"><line x1="-250" y1="160" x2="-90"  y2="256" stroke="url(#g7)"  stroke-width="0.9" stroke-linecap="round"/><circle cx="-90"  cy="256" r="1.1" fill="white"/></g>
+      <g class="comet c8"  style="transform-origin: -100px 40px;"><line x1="-100" y1="40"  x2="20"   y2="112" stroke="url(#g8)"  stroke-width="1.6" stroke-linecap="round"/><circle cx="20"   cy="112" r="1.7" fill="white"/></g>
+      <g class="comet c9"  style="transform-origin: -180px 300px;"><line x1="-180" y1="300" x2="-50"  y2="378" stroke="url(#g9)"  stroke-width="1.1" stroke-linecap="round"/><circle cx="-50"  cy="378" r="1.3" fill="#ffe060"/></g>
+      <g class="comet c10" style="transform-origin: -60px 180px;"><line x1="-60"  y1="180" x2="60"   y2="252" stroke="url(#g10)" stroke-width="1.0" stroke-linecap="round"/><circle cx="60"   cy="252" r="1.2" fill="white"/></g>
+      <g class="comet c11" style="transform-origin: -140px 440px;"><line x1="-140" y1="440" x2="-10"  y2="518" stroke="url(#g11)" stroke-width="0.8" stroke-linecap="round"/><circle cx="-10"  cy="518" r="1.0" fill="white"/></g>
+      <g class="comet c12" style="transform-origin: -300px 220px;"><line x1="-300" y1="220" x2="-150" y2="310" stroke="url(#g12)" stroke-width="1.3" stroke-linecap="round"/><circle cx="-150" cy="310" r="1.4" fill="#fff4a0"/></g>
+    </svg>
+
+    <div class="content">
+        <img src="assets/namePortfolio.png" class="title">
+         <img src="assets/moon.png" class="moon">
+         <img src="assets/astronaut.png" class="astronaut">
+         <img src="assets/ufo.png" class="ufo">
+    </div>
+      </div>
+  <script src="menu.js"></script>
+</body>
+</html>

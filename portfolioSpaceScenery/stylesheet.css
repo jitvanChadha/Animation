@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000000;
+}
+
+.scroll-bg {
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    #000000  0%,
+    #000000  30%,
+    #050010  40%,
+    #0a001e  50%,
+    #12003a  58%,
+    #1e0055  64%,
+    #2e0075  70%,
+    #3a0090  74%,
+    #4400aa  78%,
+    #5010b8  81%,
+    #6628c2  84%,
+    #7e44cc  87%,
+    #9a64d8  90%,
+    #b888e4  93%,
+    #d4b0f0  96%,
+    #ede0f8  98%,
+    #ffffff  100%
+  );
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.scroll-bg .content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.scroll-bg::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 30% 40%,
+      rgba(60, 0, 100, 0.2) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 90% at 70% 60%,
+      rgba(20, 0, 60, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Comet storm ── */
+.scene {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.comet {
+  animation: fall linear infinite;
+  opacity: 0;
+}
+
+.c1  { animation-duration: 2.2s; animation-delay: 0.0s; }
+.c2  { animation-duration: 2.8s; animation-delay: 0.5s; }
+.c3  { animation-duration: 1.9s; animation-delay: 1.1s; }
+.c4  { animation-duration: 3.1s; animation-delay: 1.6s; }
+.c5  { animation-duration: 2.5s; animation-delay: 0.3s; }
+.c6  { animation-duration: 2.0s; animation-delay: 2.0s; }
+.c7  { animation-duration: 3.3s; animation-delay: 0.8s; }
+.c8  { animation-duration: 1.8s; animation-delay: 2.5s; }
+.c9  { animation-duration: 2.6s; animation-delay: 1.3s; }
+.c10 { animation-duration: 2.3s; animation-delay: 2.9s; }
+.c11 { animation-duration: 3.0s; animation-delay: 0.6s; }
+.c12 { animation-duration: 2.1s; animation-delay: 1.8s; }
+
+@keyframes fall {
+  0%   { transform: translate(0px, 0px);     opacity: 0; }
+  6%   { opacity: 1; }
+  85%  { opacity: 0.9; }
+  100% { transform: translate(900px, 540px); opacity: 0; }
+}
+
+.star {
+  animation: twinkle ease-in-out infinite;
+}
+
+.s1  { animation-duration: 2.6s; animation-delay: 0.0s; }
+.s2  { animation-duration: 3.2s; animation-delay: 0.8s; }
+.s3  { animation-duration: 2.1s; animation-delay: 1.5s; }
+.s4  { animation-duration: 3.8s; animation-delay: 0.4s; }
+.s5  { animation-duration: 2.9s; animation-delay: 2.0s; }
+.s6  { animation-duration: 2.4s; animation-delay: 1.2s; }
+.s7  { animation-duration: 3.5s; animation-delay: 0.6s; }
+.s8  { animation-duration: 2.7s; animation-delay: 1.9s; }
+.s9  { animation-duration: 3.1s; animation-delay: 0.2s; }
+.s10 { animation-duration: 2.3s; animation-delay: 2.6s; }
+.s11 { animation-duration: 3.6s; animation-delay: 1.0s; }
+.s12 { animation-duration: 2.8s; animation-delay: 0.5s; }
+.s13 { animation-duration: 3.3s; animation-delay: 2.2s; }
+.s14 { animation-duration: 2.5s; animation-delay: 1.7s; }
+.s15 { animation-duration: 3.0s; animation-delay: 0.9s; }
+
+@keyframes twinkle {
+  0%   { opacity: 0.1; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.1; }
+}
+
+.burst {
+  animation: burstPulse ease-in-out infinite;
+}
+
+.b1 { animation-duration: 2.4s; animation-delay: 0.3s; }
+.b2 { animation-duration: 3.1s; animation-delay: 1.6s; }
+
+@keyframes burstPulse {
+  0%   { opacity: 0.2; transform: scale(0.7); }
+  50%  { opacity: 1;   transform: scale(1.2); }
+  100% { opacity: 0.2; transform: scale(0.7); }
+}
+
+.content {
+  position: relative;   /* IMPORTANT */
+  height: 100vh;
+}
+
+/* Title */
+.title {
+  width: 700px;
+  display: block;
+  margin: 0 auto;
+  animation: titleFloat 4s ease-in-out infinite;
+}
+
+@keyframes titleFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* Moon (top right) */
+.moon {
+  position: absolute;
+  top: 80px;
+  right: 150px;
+  width: 100px;
+}
+
+/* Astronaut (near moon) */
+.astronaut {
+  position: absolute;
+  top: 250px;   /* adjust this */
+  right: 190px; /* adjust this */
+  width: 200px;
+  animation: astronautFloat 4s ease-in-out infinite,
+             astronautRotate 20s linear infinite;
+}
+
+@keyframes astronautFloat {
+  0%   { translate: 0 0; }
+  50%  { translate: 0 -15px; }
+  100% { translate: 0 0; }
+}
+
+@keyframes astronautRotate {
+  0%   { rotate: 0deg; }
+  100% { rotate: 360deg; }
+}
+
+.ufo {
+  width: 150px;
+  position: absolute;
+  top: 130px;
+  left: 190px;
+    animation: astronautFloat 2s ease-in-out infinite;
+}
